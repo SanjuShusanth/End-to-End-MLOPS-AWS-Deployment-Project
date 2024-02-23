@@ -30,7 +30,8 @@ list_of_files ={
     "requirements.txt",
     "setup.py",
     "research/trails.ipynb",
-    "templates/index.html"
+    "templates/index.html",
+    "research/notebooks/Shipment_price_prediction.ipynb"
 
 }
 
