@@ -1,1 +1,17 @@
-key: val
+COLUMNS:
+  Drop_point: object
+  Shipment_Mode: object
+  Dosage_Form: object
+  Line_Item_Value: float64
+  Line_Item_Quantity: int64
+  Pack_Price: float64
+  Unit_Price: float64
+  Weight: float64
+  Freight_Cost: float64
+  Line_Item_Insurance: float64
+  Delivery_Status: object
+  Pickup_Point: object
+
+
+TARGET_COLUMN:
+  name: Line_Item_Value

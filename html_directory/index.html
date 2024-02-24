@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shipment Prediction App</title>
+    <style>
+        body {
+            /* Set the background image URL and other background properties */
+            background-image: url('html_directory\images\lg.jpg'); /* Update the path to your actual image file */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            font-family: Arial, sans-serif; /* Specify a fallback font */
+            margin: 0; /* Remove default margin to cover the entire viewport */
+            padding: 0; /* Remove default padding */
+        }
+
+        /* Style the form container */
+        form {
+            max-width: 400px;
+            margin: auto;
+            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 50px; /* Adjust the top margin as needed */
+        }
+
+        /* Style the form labels and inputs */
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        /* Style the submit button */
+        button {
+            background-color: #4CAF50; /* Green */
+            color: rgb(241, 228, 228);
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Shipment Prediction App</h1>
+    <form action="/predict/" method="post" onsubmit="return postData()">
+        <!-- Add an ID to the form to use it in JavaScript -->
+        <label for="Drop_point">Drop Point:</label>
+        <input type="text" name="Drop_point" id="Drop_point" required><br>
+
+        <label for="Shipment_Mode">Shipment Mode:</label>
+        <input type="text" name="Shipment_Mode" id="Shipment_Mode" required><br>
+
+        <label for="Dosage_Form">Dosage Form:</label>
+        <input type="text" name="Dosage_Form" id="Dosage_Form" required><br>
+
+        <label for="Line_Item_Quantity">Line Item Quantity:</label>
+        <input type="text" name="Line_Item_Quantity" id="Line_Item_Quantity" required><br>
+
+        <label for="Pack_Price">Pack Price:</label>
+        <input type="text" name="Pack_Price" id="Pack_Price" required><br>
+
+        <label for="Unit_Price">Unit Price:</label>
+        <input type="text" name="Unit_Price" id="Unit_Price" required><br>
+
+        <label for="Weight">Weight:</label>
+        <input type="text" name="Weight" id="Weight" required><br>
+
+        <label for="Freight_Cost">Freight Cost:</label>
+        <input type="text" name="Freight_Cost" id="Freight_Cost" required><br>
+
+        <label for="Line_Item_Insurance">Line Item Insurance:</label>
+        <input type="text" name="Line_Item_Insurance" id="Line_Item_Insurance" required><br>
+
+        <label for="Delivery_Status">Delivery Status:</label>
+        <input type="text" name="Delivery_Status" id="Delivery_Status" required><br>
+
+        <label for="Pickup_Point">Pickup Point:</label>
+        <input type="text" name="Pickup_Point" id="Pickup_Point" required><br>
+        
+        <!-- Repeat for other input fields -->
+    
+        <button type="submit">Predict</button>
+    </form>
+    
+    <!-- Add a script to convert the form data to JSON and submit the request -->
+    <script>
+    function postData() {
+        // Get form data
+        var formData = {
+            Drop_point: document.getElementById('Drop_point').value,
+            Shipment_Mode: document.getElementById('Shipment_Mode').value,
+            Dosage_Form: document.getElementById('Dosage_Form').value,
+            Line_Item_Quantity: document.getElementById('Line_Item_Quantity').value,
+            Pack_Price: document.getElementById('Pack_Price').value,
+            Unit_Price: document.getElementById('Unit_Price').value,
+            Weight: document.getElementById('Weight').value,
+            Freight_Cost: document.getElementById('Freight_Cost').value,
+            Line_Item_Insurance: document.getElementById('Line_Item_Insurance').value,
+            Delivery_Status: document.getElementById('Delivery_Status').value,
+            Pickup_Point: document.getElementById('Pickup_Point').value
+            // Add similar lines for other input fields
+        };
+    
+        // Send a JSON request
+        fetch('/predict/', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(formData),
+        }).then(response => {
+            // Handle the response as needed
+            return response.json();
+        }).then(data => {
+            // Do something with the response data
+            console.log(data);
+        });
+    
+        // Prevent the default form submission
+        return false;
+    }
+    </script>

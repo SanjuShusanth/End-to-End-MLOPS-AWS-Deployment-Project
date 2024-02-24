@@ -1,1 +1,4 @@
-key: val
+XgboostRegressor:
+  max_depth: 6
+  learning_rate: 0.1 
+  n_estimators: 200

@@ -12,4 +12,7 @@ joblib
 types-pyYAML
 Flask
 Flask-Cors
--e.
+xgboost
+uvicorn
+fastapi
+.e
