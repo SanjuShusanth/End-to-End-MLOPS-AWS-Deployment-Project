@@ -6,7 +6,7 @@ import pandas as pd
 from box.exceptions import BoxValueError
 from box import ConfigBox
 import yaml
-from MLProject import logger
+from src.MLProject import logger
 import json
 import joblib
 from ensure import ensure_annotations

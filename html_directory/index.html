@@ -6,27 +6,24 @@
     <title>Shipment Prediction App</title>
     <style>
         body {
-            /* Set the background image URL and other background properties */
-            background-image: url('html_directory\images\lg.jpg'); /* Update the path to your actual image file */
+            background-image: url('./images/lg.jpg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            font-family: Arial, sans-serif; /* Specify a fallback font */
-            margin: 0; /* Remove default margin to cover the entire viewport */
-            padding: 0; /* Remove default padding */
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
         }
 
-        /* Style the form container */
         form {
             max-width: 400px;
             margin: auto;
-            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+            background-color: rgba(255, 255, 255, 0.8);
             padding: 20px;
             border-radius: 10px;
-            margin-top: 50px; /* Adjust the top margin as needed */
+            margin-top: 50px;
         }
 
-        /* Style the form labels and inputs */
         label {
             display: block;
             margin-bottom: 10px;
@@ -41,9 +38,8 @@
             border-radius: 4px;
         }
 
-        /* Style the submit button */
         button {
-            background-color: #4CAF50; /* Green */
+            background-color: #4CAF50;
             color: rgb(241, 228, 228);
             padding: 10px 15px;
             border: none;
@@ -54,8 +50,8 @@
 </head>
 <body>
     <h1>Shipment Prediction App</h1>
-    <form action="/predict/" method="post" onsubmit="return postData()">
-        <!-- Add an ID to the form to use it in JavaScript -->
+    <!-- Added id attribute to the form -->
+    <form id="predictionForm" action="/predict/" method="post" onsubmit="return postData()">
         <label for="Drop_point">Drop Point:</label>
         <input type="text" name="Drop_point" id="Drop_point" required><br>
 
@@ -88,47 +84,25 @@
 
         <label for="Pickup_Point">Pickup Point:</label>
         <input type="text" name="Pickup_Point" id="Pickup_Point" required><br>
-        
-        <!-- Repeat for other input fields -->
     
         <button type="submit">Predict</button>
     </form>
-    
-    <!-- Add a script to convert the form data to JSON and submit the request -->
+
     <script>
-    function postData() {
-        // Get form data
-        var formData = {
-            Drop_point: document.getElementById('Drop_point').value,
-            Shipment_Mode: document.getElementById('Shipment_Mode').value,
-            Dosage_Form: document.getElementById('Dosage_Form').value,
-            Line_Item_Quantity: document.getElementById('Line_Item_Quantity').value,
-            Pack_Price: document.getElementById('Pack_Price').value,
-            Unit_Price: document.getElementById('Unit_Price').value,
-            Weight: document.getElementById('Weight').value,
-            Freight_Cost: document.getElementById('Freight_Cost').value,
-            Line_Item_Insurance: document.getElementById('Line_Item_Insurance').value,
-            Delivery_Status: document.getElementById('Delivery_Status').value,
-            Pickup_Point: document.getElementById('Pickup_Point').value
-            // Add similar lines for other input fields
-        };
-    
-        // Send a JSON request
-        fetch('/predict/', {
+    async function postData() {
+        var formData = new FormData(document.getElementById('predictionForm'));
+
+        const response = await fetch('/predict/', {
             method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(formData),
-        }).then(response => {
-            // Handle the response as needed
-            return response.json();
-        }).then(data => {
-            // Do something with the response data
-            console.log(data);
+            body: formData,
         });
-    
-        // Prevent the default form submission
+
+        const data = await response.json();
+        console.log(data);
+
         return false;
     }
     </script>
+</body>
+</html>
+
