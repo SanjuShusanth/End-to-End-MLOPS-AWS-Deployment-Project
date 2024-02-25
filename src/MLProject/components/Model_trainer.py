@@ -1,10 +1,10 @@
 import pandas as pd
 import os
-from MLProject import logger
+from src.MLProject import logger
 from xgboost import XGBRegressor
 import pickle
-from MLProject.utils.common import save_object
-from MLProject.entity.config_entity import ModelTrainerConfig
+from src.MLProject.utils.common import save_object
+from src.MLProject.entity.config_entity import ModelTrainerConfig
 import joblib
 
 

@@ -1,8 +1,8 @@
 import os
-from MLProject import logger
+from src.MLProject import logger
 import pandas as pd
 from sklearn.model_selection import train_test_split
-from MLProject.entity.config_entity import DataValidationConfig
+from src.MLProject.entity.config_entity import DataValidationConfig
 
 
 class DataValidation:

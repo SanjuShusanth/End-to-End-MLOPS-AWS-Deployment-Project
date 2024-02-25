@@ -1,8 +1,5 @@
 import os
-import sys
 import pickle
-import numpy as np
-import pandas as pd
 from box.exceptions import BoxValueError
 from box import ConfigBox
 import yaml
@@ -10,7 +7,6 @@ from src.MLProject import logger
 import json
 import joblib
 from ensure import ensure_annotations
-from box import config_box
 from pathlib import Path
 from typing import Any
 

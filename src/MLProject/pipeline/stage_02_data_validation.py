@@ -1,6 +1,6 @@
-from MLProject.config.configuration import ConfigurationManager
-from MLProject.components.data_validation import DataValidation
-from MLProject import logger
+from src.MLProject.config.configuration import ConfigurationManager
+from src.MLProject.components.data_validation import DataValidation
+from src.MLProject import logger
 
 
 

@@ -6,8 +6,12 @@ from Shipment import model_input
 from src.MLProject.pipeline.prediction import PredictionPipeline
 import pandas as pd
 import os
+from pathlib import Path
+from fastapi.staticfiles import StaticFiles
 
 app = FastAPI()
+
+app.mount("/static", StaticFiles(directory="html_directory/static"), name="static")
 
 templates = Jinja2Templates(directory='html_directory')
 

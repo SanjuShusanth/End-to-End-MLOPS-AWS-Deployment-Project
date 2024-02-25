@@ -1,6 +1,6 @@
-from MLProject.config.configuration import ConfigurationManager
-from MLProject.components.data_transformation import DataTransformation
-from MLProject import logger
+from src.MLProject.config.configuration import ConfigurationManager
+from src.MLProject.components.data_transformation import DataTransformation
+from src.MLProject import logger
 
 
 

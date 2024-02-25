@@ -1,13 +1,13 @@
 import os
-from MLProject import logger
+from src.MLProject import logger
 from sklearn.neighbors import KNeighborsRegressor
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler, OneHotEncoder, OrdinalEncoder
 from sklearn.impute import SimpleImputer
 from sklearn.compose import ColumnTransformer
 from sklearn.preprocessing import FunctionTransformer
-from MLProject.entity.config_entity import DataTransformationConfig
-from MLProject.utils.common import save_object
+from src.MLProject.entity.config_entity import DataTransformationConfig
+from src.MLProject.utils.common import save_object
 import pandas as pd
 import numpy as np
 import pickle

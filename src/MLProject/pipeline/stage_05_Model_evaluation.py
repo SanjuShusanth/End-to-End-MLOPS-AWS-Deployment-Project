@@ -1,6 +1,6 @@
-from MLProject.config.configuration import ConfigurationManager
-from MLProject.components.Model_evaluation import ModelEvaluation
-from MLProject import logger
+from src.MLProject.config.configuration import ConfigurationManager
+from src.MLProject.components.Model_evaluation import ModelEvaluation
+from src.MLProject import logger
 from pathlib import Path
 
 

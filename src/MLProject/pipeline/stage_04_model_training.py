@@ -1,6 +1,6 @@
-from MLProject.config.configuration import ConfigurationManager
-from MLProject.components.Model_trainer import ModelTrainer
-from MLProject import logger
+from src.MLProject.config.configuration import ConfigurationManager
+from src.MLProject.components.Model_trainer import ModelTrainer
+from src.MLProject import logger
 from pathlib import Path
 
 

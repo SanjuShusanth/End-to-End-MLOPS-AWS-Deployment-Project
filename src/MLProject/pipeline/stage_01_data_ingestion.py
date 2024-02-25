@@ -1,6 +1,6 @@
-from MLProject.config.configuration import ConfigurationManager
-from MLProject.components.data_ingestion import DataIngestion
-from MLProject import logger
+from src.MLProject.config.configuration import ConfigurationManager
+from src.MLProject.components.data_ingestion import DataIngestion
+from src.MLProject import logger
 
 
 

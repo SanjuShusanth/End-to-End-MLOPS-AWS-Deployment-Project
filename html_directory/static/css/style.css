@@ -1,0 +1,51 @@
+body {
+    background-image: url('../css/lg.png');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: Popins;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+    color: wheat;
+
+}
+
+form {
+    max-width: 400px;
+    margin: auto;
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 50px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-style: inherit;
+    color: black;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    color: lightcyan;
+}
+
+button {
+    background-color: #4CAF50;
+    color: rgb(241, 228, 228);
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
