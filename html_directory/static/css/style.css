@@ -1,5 +1,5 @@
 body {
-    background-image: url('../css/lg.png');
+    background-image: url('../css/lg1.jpg');
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
@@ -11,17 +11,19 @@ body {
 
 h1 {
     text-align: center;
-    color: wheat;
+    color:crimson;
 
 }
 
 form {
     max-width: 400px;
-    margin: auto;
-    background-color: rgba(255, 255, 255, 0.2);
-    padding: 20px;
+    margin-left: 0;
+    margin-right: auto;
+    background-color: rgba(255, 255, 255, 0.3);
+    padding: 10px;
     border-radius: 10px;
     margin-top: 50px;
+    background-position: center;
 }
 
 label {
@@ -29,16 +31,21 @@ label {
     margin-bottom: 5px;
     font-style: inherit;
     color: black;
+    font-weight: bolder;
+    background-position: center;
+    margin-left: 0;
 }
 
-input {
+input, select {
     width: 100%;
-    padding: 10px;
+    padding: 5px;
     margin-bottom: 15px;
     box-sizing: border-box;
     border: 1px solid #ccc;
     border-radius: 4px;
-    color: lightcyan;
+    color: black;
+    background-position: left;
+    margin-left: 0;
 }
 
 button {

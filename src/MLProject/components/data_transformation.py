@@ -70,6 +70,12 @@ class DataTransformation:
             train_df['Drop_point'].replace("Côte d'Ivoire", "Côte d Ivoire")
             test_df['Drop_point'].replace("Côte d'Ivoire", "Côte d Ivoire")
 
+            #for col in train_df.select_dtypes(np.number).columns:
+                #train_df[col] = np.log1p(train_df[col])
+
+            #for col in test_df.select_dtypes(np.number).columns:
+                #test_df[col] = np.log1p(test_df[col])
+
             input_feature_train_df = train_df.drop(columns=['Line_Item_Value'])
             target_feature_train_df = train_df['Line_Item_Value']
 

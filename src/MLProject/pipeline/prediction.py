@@ -25,6 +25,9 @@ class PredictionPipeline:
                                                            'Pack_Price', 'Unit_Price', 'Weight', 'Freight_Cost',
                                                            'Line_Item_Insurance', 'Delivery_Status', 'Pickup_Point'])
 
+
+            #data_values = data_df.iloc[0].to_numpy()
+
             data_scaled = preprocessor.transform(data_df)
             pred = model.predict(data_scaled)
 

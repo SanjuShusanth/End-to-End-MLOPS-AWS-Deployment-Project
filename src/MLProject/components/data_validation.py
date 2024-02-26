@@ -1,6 +1,7 @@
 import os
 from src.MLProject import logger
 import pandas as pd
+import numpy as np
 from sklearn.model_selection import train_test_split
 from src.MLProject.entity.config_entity import DataValidationConfig
 

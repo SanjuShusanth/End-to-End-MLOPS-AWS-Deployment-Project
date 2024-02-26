@@ -4,21 +4,68 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shipment Prediction App</title>
+    <link rel="icon" type="image/x-icon" href="static/css/favicon.ico" />
     <link rel="stylesheet" type="text/css" href="/static/css/style.css">
+    <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="static/css/styles.css" rel="stylesheet" />
 </head>
 <body>
-    <h1>Shipment Prediction App</h1>
+    <h1>Shipment Price Prediction App</h1>
     <!-- Added id attribute to the form -->
     <form id="predictionForm" action="/predict/" method="post" onsubmit="return postData()">
+        <label for="Pickup_Point">Pickup Point:</label>
+        <select name="Pickup_Point" id="Pickup_Point" type="text">
+            <option value="India">India</option>
+            <option value="Others">Others</option>
+        </select>
+
         <label for="Drop_point">Drop Point:</label>
-        <input type="text" name="Drop_point" id="Drop_point" required><br>
+        <select name="Drop_point" id="Drop_point" type="text">
+            <option value="Côte d'Ivoire">Côte d'Ivoire</option>
+            <option value="Vietnam">Vietnam</option>
+            <option value="Nigeria">Nigeria</option>
+            <option value="Zambia">Zambia</option>
+            <option value="Tanzania">Tanzania</option>
+            <option value="Rwanda">Rwanda</option>
+            <option value="Haiti">Haiti</option>
+            <option value="Zimbabwe">Zimbabwe</option>
+            <option value="Ethiopia">Ethiopia</option>
+            <option value="Others">Others</option>
+            <option value="South Africa">South Africa</option>
+            <option value="Guyana">Guyana</option>
+            <option value="Mozambique">Mozambique</option>
+            <option value="Kenya">Kenya</option>
+            <option value="Uganda">Uganda</option>
+            <option value="South Sudan">South Sudan</option>
+            <option value="Congo, DRC">Congo, DRC</option>
+        </select>
 
         <label for="Shipment_Mode">Shipment Mode:</label>
-        <input type="text" name="Shipment_Mode" id="Shipment_Mode" required><br>
+        <select name="Shipment_Mode" id="Shipment_Mode" type="text">
+            <option value="Air">Air</option>
+            <option value="Truck">Truck</option>
+            <option value="Air Charter">Air Charter</option>
+            <option value="Ocean">Ocean</option>
+        </select>
 
         <label for="Dosage_Form">Dosage Form:</label>
-        <input type="text" name="Dosage_Form" id="Dosage_Form" required><br>
+        <select name="Dosage_Form" id="Dosage_Form" type="text">
+            <option value="Test kit">Test kit</option>
+            <option value="Others">Others</option>
+            <option value="Tablet">Tablet</option>
+            <option value="Tablet - FDC">Tablet - FDC</option>
+        </select>
 
+        <label for="Delivery_Status">Delivery Status:</label>
+        <select name="Delivery_Status" id="Delivery_Status" type="text">
+            <option value="On time">On time</option>
+            <option value="Delayed">Delayed</option>
+            <option value="Delivered Early">Delivered Early</option>
+        </select>
+        
         <label for="Line_Item_Quantity">Line Item Quantity:</label>
         <input type="text" name="Line_Item_Quantity" id="Line_Item_Quantity" required><br>
 
@@ -37,12 +84,7 @@
         <label for="Line_Item_Insurance">Line Item Insurance:</label>
         <input type="text" name="Line_Item_Insurance" id="Line_Item_Insurance" required><br>
 
-        <label for="Delivery_Status">Delivery Status:</label>
-        <input type="text" name="Delivery_Status" id="Delivery_Status" required><br>
 
-        <label for="Pickup_Point">Pickup Point:</label>
-        <input type="text" name="Pickup_Point" id="Pickup_Point" required><br>
-    
         <button type="submit">Predict</button>
     </form>
 
@@ -55,12 +97,54 @@
             body: formData,
         });
 
-        const data = await response.json();
+        const data = await response.text();
         console.log(data);
+
+        document.body.innerHTML = data;
 
         return false;
     }
     </script>
+    <!-- Footer-->
+    <footer class="border-top">
+        <div class="container px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7">
+                    <ul class="list-inline text-center">
+                        <li class="list-inline-item">
+                            <a href="https://www.linkedin.com/in/sanju-shakthivel-57199417a/">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fas fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="https://www.youtube.com/channel/UCHhs2FhK_O1kRvMvaco2hFQ">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fas fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-youtube fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="https://github.com/SanjuShusanth">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fas fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="small text-center text-muted fst-italic"></div>
+                    <div class="small text-center text-muted fst-italic"></div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Core theme JS-->
+    <script src="/static/js/scripts.js"></script>
 </body>
 </html>
+    
 
