@@ -85,5 +85,5 @@ async def prediction(request: Request,
         return templates.TemplateResponse('results.html', {'request': request, 'result': Results})
 
 if __name__ == "__main__":
-    uvicorn.run(app, host='0.0.0.0', port=8000)
+    uvicorn.run(app, host='0.0.0.0', port=8080)
 
