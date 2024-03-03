@@ -81,7 +81,7 @@ async def prediction(request: Request,
         input_df = pd.DataFrame([test_data], columns=columns)
         pipeline = PredictionPipeline()
         pred = pipeline.predict(input_df)
-        Results = round(pred[0])
+        Results = pred[0]
         return templates.TemplateResponse('results.html', {'request': request, 'result': Results})
 
 if __name__ == "__main__":
